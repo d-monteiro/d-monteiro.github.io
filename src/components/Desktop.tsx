@@ -17,7 +17,7 @@ const Desktop = () => {
   } = useWindowManager();
 
   const folderItems = [
-    { id: 'about', title: 'Sobre Mim', position: { x: 50, y: 50 } },
+    { id: 'about', title: 'Sobre Mim', position: { x: 42, y: 50 } },
     { id: 'projects', title: 'Projetos', position: { x: 50, y: 150 } },
     { id: 'vision', title: 'Visão', position: { x: 50, y: 250 } },
     { id: 'contact', title: 'Contacto', position: { x: 50, y: 350 } },
