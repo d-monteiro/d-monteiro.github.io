@@ -36,24 +36,42 @@ const Taskbar = ({ windows, onRestoreWindow, onOpenWindow }: TaskbarProps) => {
       
       <div className="fixed bottom-0 left-0 right-0 h-12 z-30 taskbar-shine border-t border-white/20">
         <div className="flex items-center justify-between h-full px-2">
-          {/* Start Button */}
-          <button
-            onClick={handleStartClick}
-            className={`
-              px-4 py-2 rounded-md font-semibold text-sm transition-all duration-200
-              ${isStartMenuOpen 
-                ? 'bg-white/30 text-white shadow-inner' 
-                : 'vista-button text-white hover:bg-white/20'
-              }
-            `}
-          >
-            <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">⊞</span>
+          {/* Start Button - Circular and protruding */}
+          <div className="relative">
+            <button
+              onClick={handleStartClick}
+              className={`
+                relative w-14 h-14 -mt-2 rounded-full transition-all duration-200 overflow-hidden
+                ${isStartMenuOpen 
+                  ? 'bg-white/30 shadow-inner' 
+                  : 'hover:bg-white/20'
+                }
+              `}
+              style={{
+                background: isStartMenuOpen 
+                  ? 'rgba(255, 255, 255, 0.3)' 
+                  : 'linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                boxShadow: isStartMenuOpen 
+                  ? 'inset 0 2px 4px rgba(0, 0, 0, 0.3)' 
+                  : '0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2)'
+              }}
+            >
+              {/* Placeholder for Windows logo */}
+              <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
+                <div 
+                  className="w-8 h-8 bg-cover bg-center bg-no-repeat opacity-90"
+                  style={{
+                    backgroundImage: 'url(/windows-logo-placeholder.png)',
+                    filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
+                  }}
+                >
+                  {/* Fallback icon if image doesn't load */}
+                  <span className="text-white text-lg font-bold flex items-center justify-center w-full h-full">⊞</span>
+                </div>
               </div>
-              <span>Início</span>
-            </div>
-          </button>
+            </button>
+          </div>
 
           {/* Task Buttons */}
           <div className="flex-1 flex items-center space-x-1 mx-4 overflow-x-auto">
