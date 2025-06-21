@@ -34,7 +34,7 @@ const Taskbar = ({ windows, onRestoreWindow, onOpenWindow }: TaskbarProps) => {
         onOpenWindow={onOpenWindow}
       />
       
-      <div className="fixed bottom-0 left-0 right-0 h-12 window-glass border-t border-white/30 z-30">
+      <div className="fixed bottom-0 left-0 right-0 h-12 z-30 taskbar-shine border-t border-white/20">
         <div className="flex items-center justify-between h-full px-2">
           {/* Start Button */}
           <button
