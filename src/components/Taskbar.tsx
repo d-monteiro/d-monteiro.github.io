@@ -1,13 +1,13 @@
 
 import { useState } from 'react';
 import { WindowState } from '../hooks/useWindowManager';
-import Clock from './Clock';
+import ClockComponent from './Clock';
 import StartMenu from './StartMenu';
 
 interface TaskbarProps {
   windows: WindowState[];
   onRestoreWindow: (id: string) => void;
-  onOpenWindow: (id: string, title: string) => void;
+  onOpenWindow: (id: string, title: string, content: string) => void;
 }
 
 const Taskbar = ({ windows, onRestoreWindow, onOpenWindow }: TaskbarProps) => {
@@ -71,7 +71,7 @@ const Taskbar = ({ windows, onRestoreWindow, onOpenWindow }: TaskbarProps) => {
 
           {/* System Tray */}
           <div className="flex items-center space-x-3">
-            <Clock />
+            <ClockComponent />
           </div>
         </div>
       </div>

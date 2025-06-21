@@ -5,7 +5,7 @@ import { User, FolderOpen, Mail, Eye, Settings, LogOut } from 'lucide-react';
 interface StartMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenWindow: (id: string, title: string) => void;
+  onOpenWindow: (id: string, title: string, content: string) => void;
 }
 
 const StartMenu = ({ isOpen, onClose, onOpenWindow }: StartMenuProps) => {
@@ -22,7 +22,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow }: StartMenuProps) => {
 
   const handleItemClick = (id: string, title: string) => {
     console.log('🔊 Menu item click sound');
-    onOpenWindow(id, title);
+    onOpenWindow(id, title, id);
     onClose();
   };
 

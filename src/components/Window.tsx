@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { X, Minimize2, Maximize2, RotateCcw } from 'lucide-react';
+import { X, Minimize2, Maximize2, RotateCcw, Folder } from 'lucide-react';
 import { WindowState } from '../hooks/useWindowManager';
 
 interface WindowProps {
@@ -32,8 +32,8 @@ const Window = ({
         const newY = e.clientY - dragOffset.y;
         
         // Keep window within viewport bounds
-        const maxX = window.innerWidth - window.size.width;
-        const maxY = window.innerHeight - window.size.height - 48; // Account for taskbar
+        const maxX = globalThis.window.innerWidth - window.size.width;
+        const maxY = globalThis.window.innerHeight - window.size.height - 48; // Account for taskbar
         
         onPositionChange({
           x: Math.max(0, Math.min(newX, maxX)),
@@ -180,7 +180,7 @@ const Window = ({
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center space-x-2">
-          <folder size={16} className="text-yellow-200" />
+          <Folder size={16} className="text-yellow-200" />
           <span className="text-white font-medium text-sm">{window.title}</span>
         </div>
         

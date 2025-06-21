@@ -1,5 +1,5 @@
 
-import { folder } from 'lucide-react';
+import { Folder } from 'lucide-react';
 import { useState } from 'react';
 
 interface FolderIconProps {
@@ -41,7 +41,7 @@ const FolderIcon = ({ id, title, position, onClick }: FolderIconProps) => {
           mb-2 transition-all duration-200 text-yellow-200
           ${isHovered ? 'animate-bounce-subtle' : ''}
         `}>
-          <folder 
+          <Folder 
             size={48} 
             className="drop-shadow-lg filter"
             fill="currentColor"

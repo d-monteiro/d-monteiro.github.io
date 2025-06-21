@@ -1,8 +1,8 @@
 
 import { useState, useEffect } from 'react';
-import { clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
-const Clock = () => {
+const ClockComponent = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Clock = () => {
 
   return (
     <div className="flex items-center space-x-2 text-white text-sm">
-      <clock size={16} className="text-blue-200" />
+      <Clock size={16} className="text-blue-200" />
       <div className="text-right">
         <div className="font-mono leading-tight">{formatTime(time)}</div>
         <div className="text-xs text-blue-200 leading-tight">{formatDate(time)}</div>
@@ -40,4 +40,4 @@ const Clock = () => {
   );
 };
 
-export default Clock;
+export default ClockComponent;
