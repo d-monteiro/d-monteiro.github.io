@@ -39,13 +39,15 @@ const Desktop = () => {
         }}
       />
       
-      {/* Fallback gradient if image doesn't load */}
+      {/* Fallback gradient if image doesn't load
       <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600" />
+       */}
 
-      {/* Overlay pattern for texture */}
+      {/* Overlay pattern for texture 
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]" />
       </div>
+      */}
 
       {/* Desktop Icons */}
       {folderItems.map((item) => (
