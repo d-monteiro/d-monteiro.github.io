@@ -58,16 +58,17 @@ const Taskbar = ({ windows, onRestoreWindow, onOpenWindow }: TaskbarProps) => {
               }}
             >
               {/* Placeholder for Windows logo */}
-              <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-black to-black rounded-full flex items-center justify-center">
                 <div 
-                  className="w-8 h-8 bg-cover bg-center bg-no-repeat opacity-90"
+                  className="w-16 h-16 bg-cover bg-center bg-no-repeat opacity-90"
                   style={{
-                    backgroundImage: 'url(/windows-logo-placeholder.png)',
+                    backgroundImage: 'url(/vista.png)',
                     filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
                   }}
                 >
-                  {/* Fallback icon if image doesn't load */}
+                  {/* Fallback icon if image doesn't load 
                   <span className="text-white text-lg font-bold flex items-center justify-center w-full h-full">⊞</span>
+                  */}
                 </div>
               </div>
             </button>
