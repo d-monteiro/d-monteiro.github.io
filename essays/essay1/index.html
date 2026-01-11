@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Technical thoughts on the state of robotics</title>
+  <style>
+    :root{ --bg:#0b0f12; --text:#e6eef2; --muted:#9aa3a8; --accent:#4aa3ff; --width:760px; }
+    html,body{height:100%;}
+    body{ margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; padding:48px 20px; display:flex; justify-content:center; }
+    .container{ max-width:var(--width); width:100%; }
+    a.back{ color:var(--accent); text-decoration:none; font-size:14px; }
+    h1{ margin:0 0 8px 0; font-size:28px; }
+    p{ color:var(--muted); margin:12px 0; line-height:1.6; }
+    ul{ color:var(--muted); margin:12px 0; padding-left:24px; line-height:1.8; }
+    li{ margin:8px 0; }
+    img{ max-width:100%; height:auto; margin:24px auto; border-radius:8px; display:block; }
+    .caption{ color:var(--muted); font-size:12px; margin-top:4px; margin-bottom:24px; text-align:center; }
+    .caption a{ color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <a class="back" href="../../index.html">← back</a>
+    <h1>Technical thoughts on the state of robotics</h1>
+
+    <img src="l'architecte.jpg" alt="L'Architecte by Henri Marcel Magne" />
+    <p class="caption"><em>L'Architecte</em> by Henri Marcel Magne, 1910. First saw this in <a href="https://michejafang.substack.com/p/michelles-2025-letter" target="_blank" rel="noopener noreferrer">Michelle Fang's 2025 letter</a>.</p>
+
+    <p>Spent a week diving into the Shenzhen robotics scene, the highest SNR place on earth for robotics.</p>
+
+    <ul>
+      <li><strong>Every one want to build robots, everyone wants to deploy them; but no one has a bulletproof use case for them</strong> (imo, prove me wrong!)</li>
+
+      <li><strong>The big names in robot production are worried about developing a better product/reducing costs. But don't put a thought into how they are selling them.</strong><br>
+      Leaving open a market for car dealership style businesses.</li>
+
+      <li><strong>People are still sleeping on hardware (as always);</strong> it has become my opinion that useful humanoids can't be created focusing on the software layer.<br>
+      Future unlocks will happen 75% on hardware, 25% on software.</li>
+
+      <li><strong>One of the main bottlenecks right now in mass scale deployment is the learning rate.</strong> Taking 100-200 examples is not worth it for replacing a human. You need to train a robot in 5 examples, for that, we need two things:
+        <ul>
+          <li>A robust learning mechanism, fine tuning by back propagation won't work.</li>
+          <li>A general model that can get out of sticky situations.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p style="margin-top:24px; padding-bottom:24px;">Those are the two problems to solve. The first is (on the way to be) solved, the second is the problem.</p>
+
+  </main>
+</body>
+</html>
